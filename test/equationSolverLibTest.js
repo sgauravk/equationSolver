@@ -1,5 +1,5 @@
 const assert = require("assert");
-const {checkIndex} = require("../src/equationSolverLib.js");
+const {revOperator, checkIndex} = require("../src/equationSolverLib.js");
 
 describe('checkIndex', function() {
   it('should return index of given operator', function() {
@@ -13,3 +13,13 @@ describe('checkIndex', function() {
     assert.deepEqual(checkIndex(""),undefined);
   });
 });
+
+describe('revOperator', function() {
+  it('should send reverse operator', function() {
+    assert.deepEqual(revOperator("+"),"-");
+    assert.deepEqual(revOperator("*"),"/");
+    assert.deepEqual(revOperator("/"),"*");
+    assert.deepEqual(revOperator("-"),"+");
+  });
+});
+

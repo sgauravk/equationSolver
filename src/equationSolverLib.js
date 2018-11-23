@@ -6,4 +6,11 @@ const checkIndex = function(list,char){
   }
 };
 
-module.exports = {checkIndex}
+const revOperator = function(operator){
+  let symbols = ['+','-','*','/'];
+  let oppSymbol = ['-','+','/','*'];
+  let index = checkIndex(symbols,operator);
+  return oppSymbol[index];
+}
+
+module.exports = {checkIndex, revOperator};
