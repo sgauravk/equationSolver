@@ -1,25 +1,25 @@
 const assert = require("assert");
-const {revOperator, checkIndex} = require("../src/equationSolverLib.js");
+const {revSign, chkIndex} = require("../src/equationSolverLib.js");
 
-describe('checkIndex', function() {
+describe('chkIndex', function() {
   it('should return index of given operator', function() {
-    assert.deepEqual(checkIndex([1,2,3,4,"+"],"+"),4);
-    assert.deepEqual(checkIndex(["+"],"+"),0);
+    assert.deepEqual(chkIndex([1,2,3,4,"+"],"+"),4);
+    assert.deepEqual(chkIndex(["+"],"+"),0);
   });
   it('should return undefined when empty array is provided', function() {
-    assert.deepEqual(checkIndex([]),undefined);
+    assert.deepEqual(chkIndex([]),undefined);
   });
   it('should return undefined when array is not defined', function() {
-    assert.deepEqual(checkIndex(""),undefined);
+    assert.deepEqual(chkIndex(""),undefined);
   });
 });
 
-describe('revOperator', function() {
+describe('revSign', function() {
   it('should send reverse operator', function() {
-    assert.deepEqual(revOperator("+"),"-");
-    assert.deepEqual(revOperator("*"),"/");
-    assert.deepEqual(revOperator("/"),"*");
-    assert.deepEqual(revOperator("-"),"+");
+    assert.deepEqual(revSign("+"),"-");
+    assert.deepEqual(revSign("*"),"/");
+    assert.deepEqual(revSign("/"),"*");
+    assert.deepEqual(revSign("-"),"+");
   });
 });
 
